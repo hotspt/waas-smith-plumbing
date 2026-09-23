@@ -1,5 +1,5 @@
 ---
-import { client, telHref } from '../lib/client';
+import { client, telHref, url } from '../lib/client';
 
 const year = new Date().getFullYear();
 const { address } = client;
@@ -34,7 +34,7 @@ const { address } = client;
       <h3 class="text-white font-bold mb-4">Services</h3>
       <ul class="space-y-2 text-brand-200">
         {client.services.slice(0, 4).map(svc => (
-          <li><a href={svc.href} class="hover:text-accent-400 transition">{svc.title}</a></li>
+          <li><a href={url(svc.href)} class="hover:text-accent-400 transition">{svc.title}</a></li>
         ))}
       </ul>
     </div>

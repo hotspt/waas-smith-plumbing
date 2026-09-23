@@ -1,5 +1,5 @@
 ---
-import { client, telHref } from '../lib/client';
+import { client, telHref, url } from '../lib/client';
 
 interface Props {
   title: string;
@@ -62,19 +62,19 @@ const schema = {
     <meta name="twitter:image" content={`${siteUrl}/og-image.jpg`} />
 
     <!-- PWA -->
-    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="manifest" href={url("/manifest.webmanifest")} />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content={client.businessName} />
-    <link rel="apple-touch-icon" href="/icon-192.svg" />
+    <link rel="apple-touch-icon" href={url("/icon-192.svg")} />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={url("/favicon.svg")} />
 
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
