@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50:  #eef4fb;
+  --color-brand-100: #d4e2f3;
+  --color-brand-200: #a8c5e7;
+  --color-brand-300: #7ba8db;
+  --color-brand-400: #4e8bcf;
+  --color-brand-500: #2f5a8e;
+  --color-brand-600: #24446e;
+  --color-brand-700: #1a2f4d;
+  --color-brand-800: #0f1f38;
+  --color-brand-900: #0a1628;
+
+  --color-accent-300: #ffb380;
+  --color-accent-400: #ff8533;
+  --color-accent-500: #ff6b1a;
+  --color-accent-600: #e05500;
+  --color-accent-700: #b84500;
+
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --breakpoint-3xl: 120rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-brand-900);
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Add bottom padding to account for sticky Call Now button on mobile */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}

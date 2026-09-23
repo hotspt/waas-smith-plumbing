@@ -1,0 +1,140 @@
+{
+  "businessName": "Smith Plumbing",
+  "tagline": "Austin's most trusted Plumbing experts.",
+  "phone": "+1-512-555-1212",
+  "email": "hello@smithplumbing.com",
+  "license": "M-12345",
+  "domain": "https://example.com",
+  "industry": "Plumbing",
+  "address": {
+    "street": "456 Oak Ave",
+    "city": "Austin",
+    "state": "TX",
+    "postalCode": "78702"
+  },
+  "stats": [
+    {
+      "value": "15+",
+      "label": "Years in business"
+    },
+    {
+      "value": "10,000+",
+      "label": "Systems serviced"
+    },
+    {
+      "value": "24/7",
+      "label": "Emergency response"
+    },
+    {
+      "value": "100%",
+      "label": "Satisfaction guarantee"
+    }
+  ],
+  "trustPoints": [
+    {
+      "label": "Same-day service",
+      "detail": "Most calls handled today"
+    },
+    {
+      "label": "Licensed & insured",
+      "detail": "Full coverage in TX"
+    },
+    {
+      "label": "Upfront pricing",
+      "detail": "No hidden fees, ever"
+    },
+    {
+      "label": "Satisfaction guaranteed",
+      "detail": "Or we make it right"
+    }
+  ],
+  "services": [
+    {
+      "title": "AC Repair",
+      "desc": "Same-day fixes for any brand. We diagnose fast and get your cool air back on.",
+      "icon": "snow",
+      "href": "/services/ac-repair"
+    },
+    {
+      "title": "Heating & Furnace",
+      "desc": "Expert furnace and heat pump service when the temperature drops.",
+      "icon": "flame",
+      "href": "/services/heating"
+    },
+    {
+      "title": "System Installation",
+      "desc": "New AC and heating installs done right, with warranties you can trust.",
+      "icon": "wrench",
+      "href": "/services/installation"
+    },
+    {
+      "title": "Maintenance Plans",
+      "desc": "Seasonal tune-ups that keep your system efficient and your bills low.",
+      "icon": "shield",
+      "href": "/services/maintenance"
+    },
+    {
+      "title": "Indoor Air Quality",
+      "desc": "Filters, purifiers, and humidity control for a healthier home.",
+      "icon": "wind",
+      "href": "/services/air-quality"
+    },
+    {
+      "title": "Emergency Service",
+      "desc": "24/7 emergency response when your system fails at the worst time.",
+      "icon": "clock",
+      "href": "/services/emergency"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Our AC died on the hottest day of the year. They were at our door within two hours and had it running again by dinner. Fair price, no upselling, just honest work.",
+      "name": "Sarah M.",
+      "location": "Round Rock, TX"
+    },
+    {
+      "quote": "I have used three HVAC companies in Austin over the years. This is the only one I trust. They show up on time, explain what is wrong, and charge what they quote.",
+      "name": "David R.",
+      "location": "Austin, TX"
+    },
+    {
+      "quote": "We signed up for their maintenance plan and our energy bill dropped noticeably. The techs are professional and never push you into things you do not need.",
+      "name": "Linda K.",
+      "location": "Cedar Park, TX"
+    }
+  ],
+  "serviceAreas": [
+    "Austin",
+    "Round Rock",
+    "Cedar Park",
+    "Georgetown",
+    "Pflugerville",
+    "Kyle",
+    "Buda",
+    "Leander",
+    "Lakeway",
+    "Manor"
+  ],
+  "navLinks": [
+    {
+      "href": "/",
+      "label": "Home"
+    },
+    {
+      "href": "/services",
+      "label": "Services"
+    },
+    {
+      "href": "/about",
+      "label": "About"
+    },
+    {
+      "href": "/blog",
+      "label": "Blog"
+    },
+    {
+      "href": "/contact",
+      "label": "Contact"
+    }
+  ]
+}
