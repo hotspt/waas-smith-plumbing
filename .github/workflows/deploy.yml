@@ -24,24 +24,11 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - run: npm install
-      - name: Configure Astro for GitHub Pages
+      - name: Patch astro.config for GitHub Pages
         env:
           REPO_NAME: ${{ github.event.repository.name }}
           OWNER: ${{ github.repository_owner }}
-        run: |
-          node --input-type=commonjs -e "
-            const fs = require('fs');
-            const repo = process.env.REPO_NAME;
-            const owner = process.env.OWNER;
-            let cfg = fs.readFileSync('astro.config.mjs', 'utf8');
-            cfg = cfg.replace(/site:\s*[^,]+,/, 'site: \"https://' + owner + '.github.io\",');
-            if (!/base:/.test(cfg)) {
-              cfg = cfg.replace(/export default defineConfig\(\{/, 'export default defineConfig({\n  base: \"/' + repo + '\",');
-            }
-            fs.writeFileSync('astro.config.mjs', cfg);
-            console.log('--- patched astro.config.mjs ---');
-            console.log(cfg);
-          "
+        run: node .github/patch-config.cjs
       - run: npm run build
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3

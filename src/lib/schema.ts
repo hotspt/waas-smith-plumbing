@@ -1,6 +1,6 @@
 import client from '../data/client.json';
+import { siteUrl } from './client';
 
-const siteUrl = client.domain;
 const { address } = client;
 
 export const localBusinessSchema = {
@@ -21,23 +21,10 @@ export const localBusinessSchema = {
     postalCode: address.postalCode,
     addressCountry: 'US',
   },
-  areaServed: client.serviceAreas.map((area: string) => ({
-    '@type': 'City',
-    name: area,
-  })),
+  areaServed: client.serviceAreas.map((area: string) => ({ '@type': 'City', name: area })),
   openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'],
-      opens: '07:00',
-      closes: '19:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Saturday'],
-      opens: '08:00',
-      closes: '17:00',
-    },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '07:00', closes: '19:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Saturday'], opens: '08:00', closes: '17:00' },
   ],
 };
 
@@ -49,10 +36,7 @@ export function serviceSchema(opts: { name: string; description: string; url: st
     description: opts.description,
     url: `${siteUrl}${opts.url}`,
     provider: { '@id': `${siteUrl}/#business` },
-    areaServed: client.serviceAreas.map((area: string) => ({
-      '@type': 'City',
-      name: area,
-    })),
+    areaServed: client.serviceAreas.map((area: string) => ({ '@type': 'City', name: area })),
   };
 }
 
@@ -76,10 +60,7 @@ export function faqSchema(faqs: { q: string; a: string }[]) {
     mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.a,
-      },
+      acceptedAnswer: { '@type': 'Answer', text: faq.a },
     })),
   };
 }

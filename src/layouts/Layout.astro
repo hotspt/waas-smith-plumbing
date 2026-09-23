@@ -1,5 +1,5 @@
 ---
-import { client, telHref, url } from '../lib/client';
+import { client, telHref, url, siteUrl, base } from '../lib/client';
 
 interface Props {
   title: string;
@@ -7,11 +7,13 @@ interface Props {
   canonical?: string;
 }
 
-const { title, description, canonical } = Astro.props;
+const { title, description } = Astro.props;
 const { address } = client;
 
-const siteUrl = Astro.site?.toString() ?? Astro.url.origin;
-const fullCanonical = canonical ? new URL(canonical, siteUrl).toString() : Astro.url.toString();
+// Canonical URL: actual generated path, with base path preserved.
+let pagePath = Astro.url.pathname;
+if (base && pagePath.startsWith(base)) pagePath = pagePath.slice(base.length);
+const fullCanonical = `${siteUrl}${pagePath}`;
 
 const schema = {
   '@context': 'https://schema.org',
